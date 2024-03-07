@@ -1,6 +1,5 @@
-import './App.css';
+import './App.scss';
 import TodoWrapper from './components/TodoWrapper';
-import CreateGarden from '././components/CreateGarden/CreateGarden';
 
 function App() {
   return (

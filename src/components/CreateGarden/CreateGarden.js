@@ -1,9 +1,19 @@
 import Flower from "../../assets/flower.png"; 
-import Grass from "../../assets/of08_twkx_210818.jpg";
 import "./CreateGarden.scss";
 function CreateGarden ({ completedCount }) {
 
     const flowers = Array(completedCount).fill().map((_, index) => index);
+    
+
+    if (completedCount === 0 ) {
+        return (
+            <>
+            <h2 className="garden__title"> My Garden </h2>
+            <p className="no-flower-message">Complete tasks to grow flowers!</p>
+           
+            </>
+        )
+    }
 
     return (
         <section className="garden">

@@ -1,16 +1,26 @@
+.no-flower-message {
+  padding-top: 10rem;
+  margin-bottom: 5rem;
+  font-size: 25px;
+  text-transform: uppercase;
+  font-weight: bold;
+  color: #524a4e;
+}
 .garden {
-    &__title {
-    padding-top: 15rem;
+  &__title {
+    padding-top: 10rem;
     padding-bottom: 2rem;
-    }
+    font-size: 40px;
+    color: #524a4e;
+  }
 
-    &__image {
-        width: 200px;
-    }
+  &__image {
+    width: 200px;
+  }
 
-    &__dirt {
-        height: 6rem;
-        width: 100%;
-        background-color: #436850;
-    }
+  &__dirt {
+    height: 6rem;
+    width: 100%;
+    background-color: #436850;
+  }
 }

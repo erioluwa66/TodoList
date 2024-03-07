@@ -11,32 +11,11 @@ import SetToDoLists from "./SetToDoLists/SetToDoLists";
 function TodoWrapper() {
   const [todos, setTodos] = useState([]);
 
-
-
-  useEffect(() => {
-    const API_URL = 'http://localhost:8080/tasks';
-    const getToDoItems = async () => {
-      try {
-        const response = await axios.get(API_URL);
-        setTodos(response.data);
-      } catch(error) {
-        console.log(error);
-      }
-    };
-    getToDoItems();
-  }, []);
-
   useEffect(() => {
     localStorage.setItem("todos", JSON.stringify(todos));
   }, [todos]);
 
-    
-  // const addTodo = (todo) => {
-  //   setTodos([
-  //     ...todos,
-  //     { id: uuidv4(), task: todo, completed: false, isEditing: false },
-  //   ]);
-  // };
+  
   const addTodo = (todo) => {
     setTodos([
       ...todos,
@@ -44,18 +23,6 @@ function TodoWrapper() {
     ]);
   };
 
-  // useEffect(() => {
-  //   const API_URL = 'http://localhost:8080/tasks';
-  //   const postToDoItems = async () => {
-  //     try {
-  //       const response = await axios.post(API_URL, {task: task});
-  //       setTodos([...todos, response.data]);
-  //     } catch(error) {
-  //       console.log(error);
-  //     }
-  //   };
-  //   postToDoItems();
-  // }, []);
 
   const deleteTodo = (id) => setTodos(todos.filter((todo) => todo.id !== id));
 
@@ -80,7 +47,7 @@ function TodoWrapper() {
   return (
     <>
     <div className="TodoWrapper">
-      <h1>Get Things Done !</h1>
+      <h1>Tend to Your Tasks !</h1>
       <TodoForm addTodo={addTodo} />
       {todos.map((todo) =>
         todo.isEditing ? (
@@ -96,7 +63,7 @@ function TodoWrapper() {
         )
       )}
     </div>
-    <SetToDoLists />
+    <SetToDoLists setTodos={setTodos}/>
     <CreateGarden completedCount={completedCount} />
      </>
   );

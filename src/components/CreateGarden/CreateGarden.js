@@ -8,16 +8,15 @@ function CreateGarden ({ completedCount }) {
     if (completedCount === 0 ) {
         return (
             <>
-            <h2 className="garden__title"> My Garden </h2>
+            <h2 className="garden__title"> Your Garden </h2>
             <p className="no-flower-message">Complete tasks to grow flowers!</p>
-           
             </>
         )
     }
 
     return (
         <section className="garden">
-            <h2 className="garden__title"> My Garden </h2>
+            <h2 className="garden__title"> Your Garden </h2>
             <div>
                 {flowers.map((flowerIndex) => (
                     <img 

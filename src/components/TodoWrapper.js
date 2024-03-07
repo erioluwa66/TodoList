@@ -20,13 +20,20 @@ function TodoWrapper ({}) {
             localStorage.setItem('todos', JSON.stringify(newTodos));
         
     };
-    
+    const toggleComplete = id => {
+        setTodos(todos.map(todo => todo.id ===id ? 
+            {...todo, completed: !todo.completed} : todo))};
+
+    const deleteTodo = id => {
+        setTodos(todos.filter(todo => todo.id !==id))
+    }
     return (
         <div className="TodoWrapper">
             <h1>Be Productive! </h1>
             <TodoForm addTodo={addTodo} />
             {todos.map((todo, index) => (
-                <Todo task={todo} key={index} />
+                <Todo task={todo} key={index} 
+                toggleComplete={toggleComplete} deleteTodo={deleteTodo}/>
             ))}
             
         </div>

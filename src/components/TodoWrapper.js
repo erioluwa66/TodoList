@@ -1,4 +1,5 @@
 import TodoForm from "./TodoForm";
+import Todo from "./Todo";
 import { useState,useEffect } from "react";
 import { v4 as uuidv4 } from "uuid";
 
@@ -19,14 +20,16 @@ function TodoWrapper ({}) {
             localStorage.setItem('todos', JSON.stringify(newTodos));
         
     };
-     useEffect(() => {
-        console.log(todos);
-    }, [todos]);
     
     return (
         <div className="TodoWrapper">
+            <h1>Be Productive! </h1>
             <TodoForm addTodo={addTodo} />
+            {todos.map((todo, index) => (
+                <Todo task={todo} key={index} />
+            ))}
+            
         </div>
-    )
+    );
 }
 export default TodoWrapper;

@@ -18,7 +18,9 @@ function SetToDoLists ({setTodos}) {
     return (
         <>
         <h3 className="title">Choose a pre-made list:</h3>
-        <button className="button" onClick={handleClick}>Chores</button>
+      
+        <button className="button" onClick={handleClick}>Clean the Kitchen</button>
+      
         </>
     )
 }

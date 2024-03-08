@@ -1,5 +1,4 @@
 import { useState, useEffect } from "react";
-import axios from "axios";
 import { v4 as uuidv4 } from "uuid";
 import TodoForm from "./TodoForm";
 import Todo from "./Todo";
@@ -47,7 +46,7 @@ function TodoWrapper() {
   return (
     <>
     <div className="TodoWrapper">
-      <h1>Tend to Your Tasks !</h1>
+      <h1>Tend to Your Tasks ! ✿ </h1>
       <TodoForm addTodo={addTodo} />
       {todos.map((todo) =>
         todo.isEditing ? (
